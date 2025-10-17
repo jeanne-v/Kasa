@@ -34,7 +34,7 @@
   }
 }
 
-@media (min-width: $breakpoint) {
+@media (min-width: $breakpoint-s-m) {
   .header {
     padding: $outer-padding-l;
 
@@ -48,6 +48,7 @@
 
     &__link {
       font-size: 24px;
+      text-transform: none;
     }
   }
 }

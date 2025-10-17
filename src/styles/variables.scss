@@ -3,7 +3,11 @@ $main-color: #ff6060;
 $main-text-color: #000000;
 $light-text-color: #ffffff;
 
-$breakpoint: 768px;
+$corner-radius-s: 10px;
+$corner-radius-l: 25px;
+
+$breakpoint-s-m: 768px;
+$breakpoint-m-l: 992px;
 $max-content-width: 1240px;
 $outer-padding-s: 20px;
 $outer-padding-l: 45px;

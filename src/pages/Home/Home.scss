@@ -1,0 +1,29 @@
+@use "../../styles/variables.scss" as *;
+
+.home {
+  &__cards {
+    display: grid;
+    gap: $outer-padding-s;
+    margin-top: 22px;
+  }
+}
+
+@media (min-width: $breakpoint-s-m) {
+  .home {
+    &__cards {
+      grid-template-columns: 1fr 1fr 1fr;
+      margin-top: 43px;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-m-l) {
+  .home {
+    &__cards {
+      background-color: #f6f6f6;
+      border-radius: $corner-radius-l;
+      padding: 60px;
+      gap: 50px;
+    }
+  }
+}

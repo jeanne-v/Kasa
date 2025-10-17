@@ -1,0 +1,45 @@
+@use "../../styles/variables.scss" as *;
+
+.card {
+  background-color: $main-color;
+  display: block;
+  padding: 15px 19px;
+  text-decoration: none;
+  border-radius: $corner-radius-s;
+  min-height: 255px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: $light-text-color;
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#ffffff00, #0a0a0a00 40%, #04040499);
+  }
+
+  &__title {
+    color: $light-text-color;
+    position: relative;
+    text-shadow: 0px 2px 5px #00000040;
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: $breakpoint-m-l) {
+  .card {
+    min-height: 340px;
+  }
+}

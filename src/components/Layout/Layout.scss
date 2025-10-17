@@ -9,7 +9,7 @@
   }
 }
 
-@media (min-width: $breakpoint) {
+@media (min-width: $breakpoint-s-m) {
   .main {
     padding: 5px $outer-padding-l 50px;
   }
