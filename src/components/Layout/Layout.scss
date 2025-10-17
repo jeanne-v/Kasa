@@ -1,0 +1,16 @@
+@use "../../styles/variables.scss" as *;
+
+.main {
+  padding: 7px $outer-padding-s 27px;
+
+  &__content {
+    max-width: $max-content-width;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: $breakpoint) {
+  .main {
+    padding: 5px $outer-padding-l 50px;
+  }
+}

@@ -1,0 +1,31 @@
+@use "../../styles/variables.scss" as *;
+
+.footer {
+  background-color: #000000;
+  color: $light-text-color;
+  text-align: center;
+  padding: 66px 121px 58px;
+
+  &__logo {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 122px;
+  }
+
+  &__legal {
+    font-weight: 500;
+    font-size: 12px;
+    margin: 12px 0 0;
+  }
+}
+
+@media (min-width: $breakpoint) {
+  .footer {
+    padding-bottom: 29px;
+    &__legal {
+      font-size: 24px;
+      margin-top: 40px;
+    }
+  }
+}

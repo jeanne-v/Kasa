@@ -1,5 +1,19 @@
 import { createRoot } from "react-dom/client";
+import { BrowserRouter as Router, Routes, Route } from "react-router";
 
-import App from "./App.jsx";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
 
-createRoot(document.getElementById("root")).render(<App />);
+import "./styles/main.scss";
+
+const root = createRoot(document.getElementById("root"));
+
+root.render(
+  <Router>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+      </Route>
+    </Routes>
+  </Router>
+);
