@@ -20,7 +20,7 @@
 @media (min-width: $breakpoint-m-l) {
   .home {
     &__cards {
-      background-color: #f6f6f6;
+      background-color: $sec-background-color;
       border-radius: $corner-radius-l;
       padding: 60px;
       gap: 50px;
