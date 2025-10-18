@@ -1,0 +1,86 @@
+@use "../../styles/variables.scss" as *;
+
+.slideshow {
+  height: 255px;
+  border-radius: $corner-radius-s;
+  overflow: hidden;
+  position: relative;
+
+  &__slides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    transition: transform 0.5s;
+  }
+
+  &__slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__number {
+    display: none;
+  }
+
+  &__arrow-btn {
+    background-color: transparent;
+    border: none;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+      display: block;
+      height: 20px;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-s-m) {
+  .slideshow {
+    height: 415px;
+    border-radius: $corner-radius-l;
+
+    &__controls {
+      padding: 24px 24px;
+    }
+
+    &__arrow-btn {
+      width: fit-content;
+      height: fit-content;
+
+      img {
+        height: 80px;
+      }
+    }
+
+    &__number {
+      display: block;
+      color: $light-text-color;
+      margin-top: auto;
+      margin-bottom: 0;
+    }
+  }
+}
