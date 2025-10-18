@@ -1,0 +1,55 @@
+@use "../../styles/variables.scss" as *;
+
+.error {
+  text-align: center;
+  padding: 86px 0;
+
+  &__heading,
+  &__sub-heading {
+    color: $main-color;
+  }
+
+  &__heading {
+    font-size: 96px;
+    margin: 0;
+    line-height: 1;
+  }
+
+  &__sub-heading {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 113px 0px;
+
+    span {
+      display: block;
+    }
+  }
+
+  &__link {
+    color: $main-text-color;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: $breakpoint-s-m) {
+  .error {
+    padding: 89px 0;
+
+    &__heading {
+      font-size: 288px;
+    }
+
+    &__sub-heading {
+      font-size: 36px;
+      margin: 114px 0 139px;
+
+      span {
+        display: inline;
+      }
+    }
+
+    &__link {
+      font-size: 18px;
+    }
+  }
+}
