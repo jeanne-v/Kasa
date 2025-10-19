@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./Collapse.scss";
 import arrowImg from "../../assets/arrow.svg";
 
-export default function Collapse({ title, titleType, text }) {
+export default function Collapse({ title, titleType, children }) {
   const [isOpen, setIsOpen] = useState(false);
 
   let titleEl;
@@ -24,7 +24,7 @@ export default function Collapse({ title, titleType, text }) {
         </button>
       </div>
       <div className="collapse__content">
-        <p className="collapse__text">{text}</p>
+        <div className="collapse__content-container">{children}</div>
       </div>
     </div>
   );

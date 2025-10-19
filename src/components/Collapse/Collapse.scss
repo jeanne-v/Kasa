@@ -45,10 +45,13 @@
     transition: display 0.5s allow-discrete;
   }
 
-  &__text {
+  &__content-container {
     padding: 13px 20px 19px;
-    margin: 0;
-    font-size: 12px;
+
+    * {
+      margin: 0;
+      font-size: 12px;
+    }
   }
 
   &--open {
@@ -87,9 +90,12 @@
       width: 24px;
     }
 
-    &__text {
+    &__content-container {
       padding: 20px;
-      font-size: 18px;
+
+      * {
+        font-size: 18px;
+      }
     }
   }
 }

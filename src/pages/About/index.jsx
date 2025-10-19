@@ -30,12 +30,9 @@ export default function About() {
       <div className="values">
         {values.map((value, index) => {
           return (
-            <Collapse
-              key={`${value.title}-${index}`}
-              title={value.title}
-              titleType="h2"
-              text={value.desc}
-            />
+            <Collapse key={`${value.title}-${index}`} title={value.title} titleType="h2">
+              <p>{value.desc}</p>
+            </Collapse>
           );
         })}
       </div>

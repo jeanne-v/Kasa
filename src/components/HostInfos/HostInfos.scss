@@ -1,0 +1,36 @@
+@use "../../styles/variables.scss" as *;
+
+.host-infos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__name {
+    font-size: 12px;
+    font-weight: 500;
+    color: $main-color;
+    width: min-content;
+    text-align: right;
+    margin: 0;
+  }
+
+  &__picture {
+    height: 32px;
+    width: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+@media (min-width: $breakpoint-s-m) {
+  .host-infos {
+    &__name {
+      font-size: 18px;
+    }
+
+    &__picture {
+      height: 64px;
+      width: 64px;
+    }
+  }
+}

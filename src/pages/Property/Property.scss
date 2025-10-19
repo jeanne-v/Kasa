@@ -1,0 +1,74 @@
+@use "../../styles/variables.scss" as *;
+
+.property {
+  &__title {
+    color: $main-color;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 15px 0 0;
+  }
+
+  &__location {
+    margin: 5px 0 10px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &__tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  &__rating-and-host {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 16px 0 13px;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (min-width: $breakpoint-s-m) {
+  .property {
+    &__basic-infos {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin: 24px 0;
+      gap: 10px;
+    }
+
+    &__title {
+      margin-top: 6px;
+      font-size: 36px;
+    }
+
+    &__location {
+      font-size: 18px;
+      margin: 0 0 20px;
+    }
+
+    &__rating-and-host {
+      margin: 0;
+      flex-direction: column-reverse;
+      gap: 21px;
+    }
+
+    &__details {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      > * {
+        max-width: 582px;
+        width: calc(50% - 10px);
+      }
+    }
+  }
+}

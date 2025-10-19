@@ -1,0 +1,25 @@
+@use "../../styles/variables.scss" as *;
+
+.rating {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(5, 18px);
+  grid-template-rows: 18px;
+  justify-items: center;
+  align-items: center;
+
+  &__star {
+    height: 13px;
+  }
+}
+
+@media (min-width: $breakpoint-s-m) {
+  .rating {
+    grid-template-columns: repeat(5, 36px);
+    grid-template-rows: 36px;
+
+    &__star {
+      height: 24px;
+    }
+  }
+}
