@@ -27,7 +27,7 @@ export default function About() {
   return (
     <div className="about">
       <Banner bg={bannerBg} />
-      <div className="values">
+      <div className="about__values">
         {values.map((value, index) => {
           return (
             <Collapse key={`${value.title}-${index}`} title={value.title} titleType="h2">
