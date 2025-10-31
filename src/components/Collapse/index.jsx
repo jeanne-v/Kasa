@@ -19,7 +19,11 @@ export default function Collapse({ title, titleType, children }) {
     <div className={classes}>
       <div className="collapse__top">
         {titleEl}
-        <button className="collapse__btn" onClick={() => setIsOpen(!isOpen)}>
+        <button
+          aria-label={isOpen ? "fermer" : "ouvrir"}
+          className="collapse__btn"
+          onClick={() => setIsOpen(!isOpen)}
+        >
           <img src={arrowImg} alt="" className="collapse__btn-img" />
         </button>
       </div>
