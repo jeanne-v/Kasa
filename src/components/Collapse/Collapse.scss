@@ -16,7 +16,7 @@
     align-items: center;
   }
 
-  &__title {
+  &__title * {
     font-size: 13px;
     font-weight: bold;
   }
@@ -71,7 +71,7 @@
       padding-left: 14px;
     }
 
-    &__title {
+    &__title * {
       font-size: 18px;
     }
 
