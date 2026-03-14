@@ -1,35 +1,47 @@
-import { useState } from "react";
+import { useState, useContext, createContext } from "react";
 
 import "./Collapse.scss";
 import arrowImg from "../../assets/arrow.svg";
 
-export default function Collapse({ title, titleType, children }) {
-  const [isOpen, setIsOpen] = useState(false);
+const CollapseContext = createContext();
 
-  let titleEl;
-  if (titleType === "h2") {
-    titleEl = <h2 className="collapse__title">{title}</h2>;
-  } else {
-    titleEl = <p className="collapse__title">{title}</p>;
-  }
+function Collapse({ children }) {
+  const [isOpen, setIsOpen] = useState(false);
 
   const classes = isOpen ? "collapse collapse--open" : "collapse";
 
   return (
-    <div className={classes}>
-      <div className="collapse__top">
-        {titleEl}
-        <button
-          aria-label={isOpen ? "fermer" : "ouvrir"}
-          className="collapse__btn"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <img src={arrowImg} alt="" className="collapse__btn-img" />
-        </button>
-      </div>
-      <div className="collapse__content">
-        <div className="collapse__content-container">{children}</div>
-      </div>
+    <CollapseContext.Provider value={{ isOpen, setIsOpen }}>
+      <div className={classes}>{children}</div>
+    </CollapseContext.Provider>
+  );
+}
+
+function CollapseTop({ children }) {
+  const { isOpen, setIsOpen } = useContext(CollapseContext);
+
+  return (
+    <div className="collapse__top">
+      <div className="collapse__title">{children}</div>
+      <button
+        aria-label={isOpen ? "fermer" : "ouvrir"}
+        className="collapse__btn"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <img src={arrowImg} alt="" className="collapse__btn-img" />
+      </button>
     </div>
   );
 }
+
+function CollapseContent({ children }) {
+  return (
+    <div className="collapse__content">
+      <div className="collapse__content-container">{children}</div>
+    </div>
+  );
+}
+
+Collapse.Top = CollapseTop;
+Collapse.Content = CollapseContent;
+export default Collapse;

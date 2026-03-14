@@ -63,15 +63,25 @@ export default function Property() {
           </div>
 
           <div className="property__details">
-            <Collapse title="Description" titleType="p">
-              <p>{data.description}</p>
+            <Collapse>
+              <Collapse.Top>
+                <p style={{ margin: 0 }}>Description</p>
+              </Collapse.Top>
+              <Collapse.Content>
+                <p style={{ margin: 0 }}>{data.description}</p>
+              </Collapse.Content>
             </Collapse>
-            <Collapse title="Équipements" titleType="p">
-              <ul style={{ padding: 0, listStyleType: "none" }}>
-                {data.equipments.map((item, index) => {
-                  return <li key={index}>{item}</li>;
-                })}
-              </ul>
+            <Collapse>
+              <Collapse.Top>
+                <p style={{ margin: 0 }}>Équipements</p>
+              </Collapse.Top>
+              <Collapse.Content>
+                <ul style={{ padding: 0, listStyleType: "none", margin: 0 }}>
+                  {data.equipments.map((item, index) => {
+                    return <li key={index}>{item}</li>;
+                  })}
+                </ul>
+              </Collapse.Content>
             </Collapse>
           </div>
         </div>

@@ -17,7 +17,6 @@
   }
 
   &__title {
-    margin: 0;
     font-size: 13px;
     font-weight: bold;
   }
@@ -49,7 +48,6 @@
     padding: 13px 20px 19px;
 
     * {
-      margin: 0;
       font-size: 12px;
     }
   }
@@ -77,7 +75,7 @@
       font-size: 18px;
     }
 
-    &__top h2 {
+    &__title h2 {
       font-size: 24px;
     }
 

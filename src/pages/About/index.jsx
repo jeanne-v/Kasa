@@ -30,8 +30,13 @@ export default function About() {
       <div className="about__values">
         {values.map((value, index) => {
           return (
-            <Collapse key={`${value.title}-${index}`} title={value.title} titleType="h2">
-              <p>{value.desc}</p>
+            <Collapse key={`${value.title}-${index}`}>
+              <Collapse.Top>
+                <h2 style={{ margin: 0 }}>{value.title}</h2>
+              </Collapse.Top>
+              <Collapse.Content>
+                <p style={{ margin: 0 }}>{value.desc}</p>
+              </Collapse.Content>
             </Collapse>
           );
         })}
