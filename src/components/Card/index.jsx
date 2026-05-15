@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-import "./card.scss";
+import "./Card.scss";
 
 export default function Card(props) {
   return (
