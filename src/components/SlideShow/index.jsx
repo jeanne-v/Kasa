@@ -26,6 +26,7 @@ export default function SlideShow({ pictures }) {
   return (
     <div className="slideshow">
       <div
+        data-testid="slides"
         className="slideshow__slides"
         style={{ transform: `translateX(-${100 * currentImgIndex}%)` }}
       >
@@ -44,7 +45,7 @@ export default function SlideShow({ pictures }) {
           <button className="slideshow__arrow-btn" onClick={() => handleBtnClick("prev")}>
             <img alt="précédent" src={arrowPrevImg} />
           </button>
-          <p className="slideshow__number">
+          <p className="slideshow__number" data-testid="count">
             {currentImgIndex + 1} / {pictures.length}
           </p>
           <button className="slideshow__arrow-btn" onClick={() => handleBtnClick("next")}>
