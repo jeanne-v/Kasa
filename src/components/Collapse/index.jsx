@@ -12,7 +12,9 @@ function Collapse({ children }) {
 
   return (
     <CollapseContext.Provider value={{ isOpen, setIsOpen }}>
-      <div className={classes}>{children}</div>
+      <div data-testid="collapse" className={classes}>
+        {children}
+      </div>
     </CollapseContext.Provider>
   );
 }
