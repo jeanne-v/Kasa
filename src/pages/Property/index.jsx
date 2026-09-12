@@ -19,6 +19,9 @@ export default function Property() {
     async function fetchLogement() {
       try {
         const res = await fetch("/logements.json");
+        if (!res.ok) {
+          throw new Error(res.status);
+        }
         const logementsData = await res.json();
         const logementData = logementsData.find((property) => property.id === params.id);
         if (!logementData) {
@@ -35,7 +38,7 @@ export default function Property() {
   }, [params, navigate]);
 
   if (error) {
-    return <p>Une erreur est survenue</p>;
+    return <p>une erreur est survenue : {error.message}</p>;
   }
 
   return (
