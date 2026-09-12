@@ -14,6 +14,9 @@ export default function Home() {
     async function fetchLogements() {
       try {
         const res = await fetch("/logements.json");
+        if (!res.ok) {
+          throw new Error(res.status);
+        }
         const logementsData = await res.json();
         setData(logementsData);
       } catch (err) {
@@ -25,7 +28,7 @@ export default function Home() {
   }, []);
 
   if (error) {
-    return <p>une erreur est survenue</p>;
+    return <p>une erreur est survenue : {error.message}</p>;
   }
 
   return (
