@@ -8,6 +8,7 @@ export default function Card(props) {
       className="card"
       to={`properties/${props.id}`}
       style={{ backgroundImage: `url(${props.cover})` }}
+      data-testid="card"
     >
       <div className="card__bg"></div>
       <h2 className="card__title">{props.title}</h2>
